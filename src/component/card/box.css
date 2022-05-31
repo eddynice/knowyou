@@ -1,0 +1,17 @@
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.box p {
+    margin: 50px;
+    margin-top: 20px;
+    border: 1px solid red;
+    border-radius: 5px;
+    font-weight: bold;
+    flex: 1;
+    height: 30px;
+    text-align: center;
+}
