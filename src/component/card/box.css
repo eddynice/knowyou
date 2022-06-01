@@ -1,3 +1,23 @@
+a {
+    text-decoration: none;
+}
+
+.picture {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: -1px 0px 0px -1px;
+    object-fit: cover;
+    padding: 0px;
+    position: absolute;
+    width: 100%;
+}
+
+.picture h1 {
+    color: #fff;
+    margin-left: 40px;
+}
+
 .box {
     display: flex;
     flex-wrap: wrap;
@@ -6,12 +26,47 @@
 }
 
 .box p {
-    margin: 50px;
-    margin-top: 20px;
+    margin: 20px;
     border: 1px solid red;
     border-radius: 5px;
     font-weight: bold;
     flex: 1;
     height: 30px;
     text-align: center;
+    color: #fff;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    color: rgb(5, 1, 1);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 15px 20px;
+    transition: 0.5s;
+    margin: 20px;
+    border: 1px solid red;
+    border-radius: 5px;
+    font-weight: bold;
+    flex: 1;
+    height: 30px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.links:hover {
+    color: rgb(216, 53, 53);
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        height: 150px;
+    }
+    .logo {
+        width: 100%;
+    }
+    .links {
+        width: 100%;
+    }
 }

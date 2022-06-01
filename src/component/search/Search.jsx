@@ -1,7 +1,7 @@
 import {useState} from 'react'
-import  style from './search.module.css'
+import   './search.css'
 
-function SearchBar(props) {
+function SearchBar({products}) {
     const [searchVal, setSearchVal] = useState('');
     
     const handleInput = (e) => {
@@ -12,20 +12,22 @@ function SearchBar(props) {
       setSearchVal('');
     }
     
-    const filteredProducts = props.products.filter((product) => {
+    const filteredProducts = products.filter((product) => {
       return product.includes(searchVal);
     });
     
     return (
-      <div className={style.container}>
-        <div className={style.inputwrap}>
-          <i className="fas fa-search"></i>
-          <label 
+      <div className="container1">
+        <label 
             for="product-search" 
             id="input-label"
           >
-            Product Search
+            Search your favorite artist!
           </label>
+        <div className="input-wrap">
+          <i className="fas fa-search"></i>
+          
+          
           <input 
             onChange={handleInput}
             value={searchVal}
