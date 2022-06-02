@@ -1,19 +1,28 @@
 import React from 'react';
 import "./box.css"
-import{ Link} from "react-router-dom"
+import {Boxes} from "./Boxes"
 
-export const Box = () => {
+export const Box = ({products}) => {
+  console.log(products)
   return (
+    <div>
     <div className="picture" style={{
       backgroundImage:"url(/pic.jpg)"
     }}>
-      <h1> Previou Search</h1>
-    <div className="box">
-      <Link to="/" className="links">box1wjjjjjjj</Link>
-      <Link to="/" className="links">boxj</Link>
-      <Link to="/" className="links">box1wjjjjjjj</Link>
-      <Link to="/" className="links">boxj</Link>
-        
+    
+      <h2> Trending</h2>
+      
+      <ul style={{textAlign:"center"}}>
+      {products.map((trend)=>{
+        return(
+         <li className="fleex">
+          <Boxes trend={trend}/>
+  </li>
+
+        )
+       
+      })}
+        </ul>
         </div>
 
     </div>

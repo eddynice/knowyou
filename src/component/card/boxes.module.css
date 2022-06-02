@@ -1,0 +1,33 @@
+.fleex {
+    display: inline-flex;
+    word-wrap: initial;
+    list-style-type: none;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    text-transform: capitalize;
+    margin-right: 0.5rem;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    color: rgb(5, 1, 1);
+    justify-content: space-between;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 15px 20px;
+    transition: 0.5s;
+    margin: 20px;
+    border: 1px solid red;
+    border-radius: 5px;
+    font-weight: bold;
+    height: 30px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.links:hover {
+    color: rgb(216, 53, 53);
+    background: #fff;
+}
