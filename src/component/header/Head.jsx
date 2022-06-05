@@ -1,12 +1,12 @@
 
 import{ Link} from "react-router-dom";
-import  style from "./boxes.module.css"
+//import  style from "./boxes.module.css"
 export const Boxes = ({trend}) => {
     return (
    
 
 
-      <Link to="/">{trend}</Link>
+      <Link to="/detail">{trend}</Link>
         
 
   )

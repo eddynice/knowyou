@@ -1,9 +1,11 @@
 import { useState,useEffect } from "react";
-import { Box } from "./component/card/Box";
-import Heading from "./component/heading/Heading";
-import Search from "./component/search/Search";
+import Navbar from "./component/navbar/Navbar";
 import axios from 'axios'
-
+import {Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom" 
+import {Home} from "./component/home/Home"
+import  {Detail}  from "./component/page/Detail";
+import  {Nomatch}  from "./component/Nomatch";
 
 function App() {
   const [data, setData] = useState([])
@@ -58,10 +60,19 @@ axios.request(options).then(function (response) {
   
   return (
    <div>
-<Heading/>
-<Box  products={product}/>
-<Search products={products} search={search} />
+<Navbar/>
+<Router>
+<Routes>
+<Route  exact path="/" element={<Home/>} />
+<Route  path="/detail" element={<Detail/>} />
+<Route   element={<Nomatch/>} />
 
+
+</Routes>
+</Router>
+
+
+  
    </div>
   );
 }

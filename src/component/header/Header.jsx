@@ -1,8 +1,8 @@
 import React from 'react';
-import "./box.css"
-import {Boxes} from "./Boxes"
+import "./head.css"
+import {Boxes} from "./Head"
 
-export const Box = ({products}) => {
+export const Header = ({products}) => {
   console.log(products)
   return (
     <div>
