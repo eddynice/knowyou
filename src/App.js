@@ -5,7 +5,8 @@ import {Routes, Route} from "react-router-dom";
 import {BrowserRouter as Router} from "react-router-dom" 
 import {Home} from "./component/home/Home"
 import  {Detail}  from "./component/page/Detail";
-import  {Nomatch}  from "./component/Nomatch";
+import  {Nomatch}  from "./component/nomatch/Nomatch";
+import { Header } from "./component/header/Header";
 
 function App() {
   const [data, setData] = useState([])
@@ -81,44 +82,28 @@ axios.request(options).then(function (response) {
     'salt', 'pepper', 'oregano', 'basil', 'paprika'
   ];
   
-  if (error) {
-    return <>{error.message}</>;
-} else if (!isLoaded) {
-    return <>loading...</>;
-} else {
-    return (
-        /* here we map over the element and display each item as a card  */
-        <div className="wrapper">
-            <ul className="card-grid">
-                {items.map((item) => (
-                    <li>
-                        <article className="card" key={item.callingCodes}>
-                            <div className="card-image">
-                                <img src={item.flag} alt={item.name} />
-                            </div>
-                            <div className="card-content">
-                                <h2 className="card-name">{item.name}</h2>
-                                <ol className="card-list">
-                                    <li>
-                                        population:{" "}
-                                        <span>{item.population}</span>
-                                    </li>
-                                    <li>
-                                        Region: <span>{item.region}</span>
-                                    </li>
-                                    <li>
-                                        Capital: <span>{item.capital}</span>
-                                    </li>
-                                </ol>
-                            </div>
-                        </article>
-                    </li>
-                ))}
-            </ul>
+  //if (error) {
+    //return <>{error.message}</>;
+//} else if (!isLoaded) {
+  //  return <>loading...</>;
+//} else {
+    return (        
+      /* here we map over the element and display each item as a card  */
+      <Router>
+      <div className="wrapper">
+          <Navbar/>
+      
+          <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="detail" element={<Detail/>} />
+          <Route path="*" element={<Nomatch/>} />
+          
+          </Routes>
         </div>
+        </Router>
     );
 }
 
-}
+
 
 export default App;
